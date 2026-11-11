@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Timetable</title>
+    </head>
+    <body>
+        <h1>class Timetable</h1>
+
+        {% if records %}
+        <table>
+            <tr>
+                <th>Day</th>
+                <th>Timeslot</th>
+                <th>Subject</th>
+                <th>Faculty name</th>
+                <th>classroom</th>
+                
+            </tr>
+            {% for slot in records %}
+         
+            <tr>
+                <td>{{slot.Day}}</td>
+                <td>{{slot.startTime}}-{{slot.EndTime}}</td>
+                <td>{{slot.subjectname}}</td>
+                <td>{{slot.facultyname}}</td>
+                <td>{{slot.classroom}}</td>
+        
+            </tr>
+
+            {% endfor %}
+
+        </table>
+
+          {% else %}
+
+             <h2>no Timetable records available.</h2>
+
+          {% endif %}
+            
+    </body>
+</html>
